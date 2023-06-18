@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>威斯兰卡官方网站</title>
+<meta name="keywords" content="威斯兰卡官方网站">
+<meta name="description" content="威斯兰卡（weislank）是个产品远销国内外200多个国家的国际化品牌，专注于乒乓球行业产品，采用优质的原材料，严格贯彻执行质量标准，通过持续的研发投入来不断的提升制造工艺，改良产品 性能。凭着过硬的质量，实惠的价格，深受国内外乒乓球运动爱好者的喜好。
+
+公司将秉承以探索求进取、诚信求发展、质量求生存的理念携手广大客商和合作伙伴相互依托、共同发展，开创体育事业的新世纪新曙光。">
+<link rel="shortcut icon" href="www.weislank.com/uploads/20220708/4b9cff1528817b82a9d07aff2cebeec0.png"><link rel="stylesheet" href="www.weislank.com/static/index/zm001/css/common.css?v=1.0">
+<link rel="stylesheet" href="www.weislank.com/static/index/zm001/css/index.css?v=1.1">
+<link rel="stylesheet" href="www.weislank.com/static/index/zm001/css/inner.css?v=1.2.1">
+<link rel="stylesheet" href="www.weislank.com/static/index/zm001/js/swiper7/swiper-bundle.min.css">
+<link rel="stylesheet" href="www.weislank.com/static/index/zm001/css/skrles.css" />
+<link rel="stylesheet" href="www.weislank.com/static/index/zm001/css/iconfont.css">
+<link rel="stylesheet" href="www.weislank.com/static/index/zm001/css/animate.min.css">
+<script src="www.weislank.com/static/index/zm001/js/jquery.min.js"></script>
+<script src="www.weislank.com/static/index/zm001/js/layer/layer.js"></script>
+</head>
+
+<body class="bg-color ">
+  <header id="header" class="web-header w1920">
+    <nav class="header-nav main flex">
+        <div class="nav-logo">
+            <h1>
+                <a href="/">
+                    <img src="www.weislank.com/uploads/20220713/f18be01be3014541fb4354bdbe447355.PNG" title="威斯兰卡官方网站" alt=" 威斯兰卡官方网站" class="logo1">
+                    威斯兰卡官方网站                </a>
+            </h1>
+        </div>
+        <ul class="nav-list">
+            <li  class="active" >
+                <a href="/">网站首页</a>
+            </li>
+            <li >
+                <a href="/company.html">关于我们</a>
+            </li>
+            <li >
+                <a href="/product/2.html">产品展示</a>
+            </li>
+            <li >
+                <a href="/fwcx.html">防伪查询</a>
+            </li>
+            <li >
+                <a href="/news.html">公司资讯</a>
+            </li>
+            <li >
+                <a href="/contact.html">联系我们</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<script>
+    $(function () {
+        isScroll();
+        function isScroll() {
+            
+            var header = $("#header");
+            var body=$(".bg-color")
+            if ($(window).scrollTop() > 1) {
+                header.addClass("active");
+                body.addClass("active");
+            } else {
+                header.removeClass("active");
+                body.removeClass("active");
+            }
+            var scrolled = 0, t = 0;
+            $(window).scroll(function (e) {
+                scrolled = $(this).scrollTop();
+                if (t <= scrolled) {
+                    //向下滚
+                    if (scrolled > 1) {
+                            header.addClass("header-hide").addClass("active");
+                            body.addClass("active");
+                    } else {
+                        header.removeClass("active");
+                    }
+                } else {
+                    //向上滚
+                    header.removeClass("header-hide");
+                    if (scrolled < 1) {
+                        header.removeClass("active");
+                        body.removeClass("active");
+                    }
+                }
+                setTimeout(function () {
+                    t = scrolled;
+                }, 0);
+            });
+        }
+    })
+</script>
+  <!-- 首页轮播图 -->
+<div class="swiper banner1 w1920" id="banner1">
+    <div class="swiper-wrapper">
+                <div class="swiper-slide">
+            <img src="www.weislank.com/uploads/20220727/cf6d669269c8a6d4ab109732fb044c98.jpg" alt="banner">
+        </div>
+                <div class="swiper-slide">
+            <img src="www.weislank.com/uploads/20220719/5555b12b02b32d81d75cc111ece5f076.jpg" alt="banner">
+        </div>
+                <div class="swiper-slide">
+            <img src="www.weislank.com/uploads/20220727/d4f32d5a62760a235de2249060c89fe3.jpg" alt="banner">
+        </div>
+            </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev swiper-button-black"></div>
+    <div class="swiper-button-next swiper-button-black"></div>
+</div>
+<script>
+    $(function () {
+        function mouse(banner, swiper) {
+            let ban = banner + " .swiper-slide";
+            $(ban).mouseenter(function () {
+                swiper.autoplay.stop();
+            })
+            // 鼠标移出开始自动滚动
+            $(ban).mouseleave(function () {
+                swiper.autoplay.start();
+            })
+        }
+        var mySwiper = new Swiper('#banner1', {
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: false,
+                disableOnInteraction: false,
+            },
+            // 淡入
+            // effect: 'fade',
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                // type: 'bullets',
+                type: 'fraction',
+                // type : 'progressbar',
+            },
+            // 自定义分页器
+            autoplayDisableOnInteraction: false,
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+        // mouse("#banner1", mySwiper);
+    })
+</script> 
+
+
+  <!-- 产品展示 -->
+    <section class="index1">
+    <div class="check" >
+      <div class="box wow  fadeInRight1">
+        <a href="/fwcx.html">
+          <span class="iconfont icon-sousuo"></span>
+          <p>防伪查询</p>
+        </a>
+      </div>
+    </div>
+    <div class="main">
+      <div class="web-sider">
+    <div class="titleBox">
+        <p>product</p>
+        <h2><i></i> 产品展示</h2>
+      </div>
+    <div class="proType">
+                <a href="/product/11.html" >
+            乒乓球拍        </a>
+                <a href="/product/12.html" >
+            底板        </a>
+                <a href="/product/13.html" >
+            套胶        </a>
+                <a href="/product/14.html" >
+            配附件        </a>
+            </div>
+</div> 
+      <div class="swiper index1-swiper " id="index1-swiper">
+        <div class="swiper-wrapper">
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.1s">
+              <a href="/proinfo/1.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/0818466b1dd8b20fd84e83ecbc2dbd74.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.2s">
+              <a href="/proinfo/3.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/b613ce8ebf02de182dbf5231f0bd7385.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.3s">
+              <a href="/proinfo/2.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/cca4ecaa5c0469baa72ae27f16d454e5.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.4s">
+              <a href="/proinfo/4.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/0bda0cc6fd3aea3e355808487ade8a5f.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.5s">
+              <a href="/proinfo/5.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/0bda0cc6fd3aea3e355808487ade8a5f.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.6s">
+              <a href="/proinfo/6.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/b613ce8ebf02de182dbf5231f0bd7385.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.7s">
+              <a href="/proinfo/7.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/cca4ecaa5c0469baa72ae27f16d454e5.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                    <div class="swiper-slide wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.8s">
+              <a href="/proinfo/8.html">
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/0818466b1dd8b20fd84e83ecbc2dbd74.jpg" alt="乒乓球拍">
+                </div>
+                  <h3 class="tet">乒乓球拍</h3>
+              </a>
+          </div>
+                  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 简介 -->
+    <section class="index2">
+    <div class="main">
+      <div class="index2-content">
+        <div class="letf-content">
+          <div class="titleBox">
+            <p>about</p>
+            <h2><i></i> 关于我们</h2>
+          </div>
+          <div class="img wow  fadeInLeft1">
+            <img src="www.weislank.com/uploads/20220711/93e57720fc0cb776f97d42de0ed83d68.png" alt="威斯兰卡官方网站">
+          </div>
+        </div>
+    
+        <div class="rigth-content wow  fadeInUp1">
+          <img src="www.weislank.com/static/index/zm001/images/logo1.png" alt="">
+          <p>威斯兰卡（weislank）是个产品远销国内外200多个国家的国际化品牌，专注于乒乓球行业产品，采用优质的原材料，严格贯彻执行质量标准，通过持续的研发投入来不断的提升制造工艺，改良产品 性能。凭着过硬的质量，实惠的价格，深受国内外乒乓球运动爱好者的喜好。公司将秉承以探索求进取、诚信求发展、质量求生存的理念携手广大客商和合作伙伴相互依托、共同发展，开创体育事业的新世纪新曙光。......</p>
+          <a href="/company.html" class="more"><span><i></i></span> 了解更多+</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="index3">
+    <div class="main " >
+      <div class="img">
+        <img src="www.weislank.com/static/index/zm001/images/index3-img.png" alt="">
+      </div>
+        <div class="content wow fadeInUp1">
+          <h4>专注于球拍制作多年</h3>
+          <h2>性能球拍 &nbsp; 乒出精彩</h2>
+          <p>匠心工艺只做您所需</p>
+          <a href="/contact.html" class="more"><span><i></i></span>联系我们</a>
+        </div>
+     
+    </div>
+  </section>
+
+    <section class="index4">
+    <div class="main">
+      <div class="titleBox">
+        <p>advantage</p>
+        <h2><i></i> 四大特色铸就好品质</h2>
+      </div>
+      <ul class="wow  fadeInUp1">
+                <li class="wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="num"  >
+            01          </div>
+          <div class="t">
+            <h3>碳素底板</h3>
+            <p>Wood floor</p>
+          </div>
+        </li>
+                <li class="wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="num"  >
+            02          </div>
+          <div class="t">
+            <h3>品质胶皮</h3>
+            <p>Quality of the rubber</p>
+          </div>
+        </li>
+                <li class="wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.3s">
+          <div class="num"  >
+            03          </div>
+          <div class="t">
+            <h3>精致护边</h3>
+            <p>Delicate edge</p>
+          </div>
+        </li>
+                <li class="wow  fadeInUp1" data-wow-duration="1s" data-wow-delay="0.4s">
+          <div class="num"  >
+            04          </div>
+          <div class="t">
+            <h3>高弹性海绵</h3>
+            <p>High elasticity sponge</p>
+          </div>
+        </li>
+              </ul>
+      <div class="swiper index4-swiper  wow  fadeInUp1" id="index4-swiper">
+        <div class="swiper-wrapper">
+                    <div class="swiper-slide ">
+            <div class="info">
+              <div class="top">
+                <div class="num">
+                  01                </div>
+                <div class="t">
+                  <h3>碳素底板</h3>
+                  <p>Wood floor</p>
+                </div>
+              </div>
+              <div class="desc">
+                  <p>碳素底板带来品质体验，当你握在手中，感受匠心工艺带来的愉悦，底板出球速度快，底劲十足，弧圈快攻，攻防结合，游刃有余，有着攻击力更强,回弹力更足，更稳定，更易掌控等优点。</p>              </div>
+            </div>
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/262291c24c78b69d5f4c1caaec2585c6.jpg" alt="碳素底板">
+                </div>
+          </div>
+                    <div class="swiper-slide ">
+            <div class="info">
+              <div class="top">
+                <div class="num">
+                  02                </div>
+                <div class="t">
+                  <h3>品质胶皮</h3>
+                  <p>Quality of the rubber</p>
+                </div>
+              </div>
+              <div class="desc">
+                  <p>弹力双面反胶能延长停球时间增强击球威力，并且可以让击球时偏差更小，进可攻，退可守，速度与旋转美好结合。</p>              </div>
+            </div>
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/29a9dae85b91ba8e435e95b3ebae7e94.jpg" alt="品质胶皮">
+                </div>
+          </div>
+                    <div class="swiper-slide ">
+            <div class="info">
+              <div class="top">
+                <div class="num">
+                  03                </div>
+                <div class="t">
+                  <h3>精致护边</h3>
+                  <p>Delicate edge</p>
+                </div>
+              </div>
+              <div class="desc">
+                  <p>柔韧防撞护边带，减轻球拍边缘因长期使用造成的磨损，可保护球拍边缘磕碰时免遭破损球拍的美观。</p>              </div>
+            </div>
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/85e6d87ebb6d400d16d63862889c7b1d.jpg" alt="精致护边">
+                </div>
+          </div>
+                    <div class="swiper-slide ">
+            <div class="info">
+              <div class="top">
+                <div class="num">
+                  04                </div>
+                <div class="t">
+                  <h3>高弹性海绵</h3>
+                  <p>High elasticity sponge</p>
+                </div>
+              </div>
+              <div class="desc">
+                  <p>高弹性蓝海绵，刚柔并济，让您体验乒乓球的弧线，旋转，直线扣杀的魅力,简约而不简单。</p>              </div>
+            </div>
+                <div class="img">
+                  <img src="www.weislank.com/uploads/20220711/c705355d7b1a0348b2dd4d87298ed58b.jpg" alt="高弹性海绵">
+                </div>
+          </div>
+                  </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 新闻资讯 -->
+  
+  <section class="index5">
+    <div class="main">
+      <div class="titleBox">
+        <p>news</p>
+        <h2><i></i> 新闻动态</h2>
+      </div>
+      <ul >
+        <div class="left-news" >
+                    <li class="wow  fadeInUp1 ">
+            <a href="/newsinfo/10.html">
+              <div class="img">
+                <div style="background: url(www.weislank.com/uploads/20220711/486e03212e2a7e9409e2d191f5eebf26.jpg) no-repeat center center;background-size: cover;"></div>
+              </div>
+              <div class="info">
+                <div class="t">
+                  <h3 class="tet">乒乓球拍黑色和红色胶皮的区别是什么？</h3>
+                  <span>2022-07-11</span>
+                </div>
+                <p>乒乓球拍黑色和红色胶皮的主要区别就是颜色的不同，正面是红胶，那反面必须是黑胶（正面是黑色，反面为红色）加以区分，并且不反光，这样双方就能互相判断对方来球特点，增加了比赛公平性和观赏性。尽管乒乓球拍两面......</p>
+              </div>
+            </a>
+          </li>
+                  </div>
+        <div class="right-news">
+                    <li class="wow  fadeInUp1 " data-wow-duration="1s" data-wow-delay="0.1s">
+            <a href="/newsinfo/9.html">
+              <div class="t">
+                <h3 class="tet">乒乓球拍一面红色一面黑色这是什么原因</h3>
+                <span>2022-07-28</span>
+              </div>
+              <p>在中国，乒乓球可以说有着广泛的群众基础，而且，中国的乒乓球队可以说冠军之师。但是有没有发现，所有的乒乓球拍，都只有有两种颜色，一面是红色，一面是黑色。那么为什么乒乓球拍只有这两种颜色呢？具体来说这是由......</p>
+            </a>
+          </li>
+                    <li class="wow  fadeInUp1 " data-wow-duration="1s" data-wow-delay="0.2s">
+            <a href="/newsinfo/8.html">
+              <div class="t">
+                <h3 class="tet">乒乓球拍差别很大，球拍底板好坏影响大吗？看完你就明白了</h3>
+                <span>2022-07-28</span>
+              </div>
+              <p>乒乓球员都希望能够不断提升自己的技术，同时也想拥有一块好的乒乓球拍，那么乒乓拍底板的好与坏影响大吗？乒乓球底板的弹性直接影响击球的触球感。这与回球时力的调整和力有关。一个好的乒乓球板会有相对较大的弹性......</p>
+            </a>
+          </li>
+                    <li class="wow  fadeInUp1 " data-wow-duration="1s" data-wow-delay="0.3s">
+            <a href="/newsinfo/7.html">
+              <div class="t">
+                <h3 class="tet">乒乓球拍黑色和红色胶皮的区别是什么？</h3>
+                <span>2022-07-12</span>
+              </div>
+              <p>乒乓球拍黑色和红色胶皮的主要区别就是颜色的不同，正面是红胶，那反面必须是黑胶（正面是黑色，反面为红色）加以区分，并且不反光，这样双方就能互相判断对方来球特点，增加了比赛公平性和观赏性。尽管乒乓球拍两面......</p>
+            </a>
+          </li>
+                  </div>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <footer class="web-footer" id="footer">
+    <div class="main footer-info">
+        <section class="footer-itme1">
+            <h2>
+                <a href="/">
+                    <img src="www.weislank.com/static/index/zm001/images/footer-logo.png" title="威斯兰卡官方网站"
+                        alt=" 威斯兰卡官方网站">
+                    威斯兰卡官方网站                </a>
+            </h2>
+            <a href="/contact.html" class="more"><span><i></i></span>联系我们</a>
+        </section>
+        <div class="footer-itme">
+            <section class="footer-itme2">
+                <ul class="nav-list ">
+                    <li  class="active" >
+                        <a href="/">网站首页</a>
+                    </li>
+                    <i></i>
+                    <li >
+                        <a href="/company.html">关于我们</a>
+                    </li>
+                    <i></i>
+                    <li >
+                        <a href="/product/2.html">产品展示</a>
+                    </li>
+                    <i></i>
+                    <li >
+                        <a href="/fwcx.html">防伪查询</a>
+                    </li>
+                    <i></i>
+                    <li >
+                        <a href="/news.html">公司资讯</a>
+                    </li>
+                    <i></i>
+                    <li >
+                        <a href="/contact.html">联系我们</a>
+                    </li>
+                </ul>
+                <ul class="contact-list">
+                    <div class="t">
+                        <span>contact us</span><i></i>
+                        <h3>联系我们</h3>
+                    </div>
+                                        <li><span>联系人：</span>梅女士</li>
+                                        <li><span>手机：</span>198-1793-2116</li>
+                                        <li><span>地址：</span>浙江省金华市义乌市北苑街道凌云二区6幢3单元404室</li>
+                                    </ul>
+            </section>
+            <section class="footer-itme3">
+                            </section>
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <div class="main">
+            <p>版权所有：义乌市米喀电子商务有限公司</p>           
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">备案号：浙ICP备2022021063号-1</a></p>
+                    </div>
+      
+    </div>
+</footer>
+<!-- <div class="fix_box">
+    <li class="back_to_top">
+        <div>
+            <img src="www.weislank.com/static/index/zm001/images/side05.png" alt="">
+            <p>返回顶部</p>
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="www.weislank.com/static/index/zm001/images/side02.png" alt="">
+            <p>  </p>
+        </div>
+    </li>
+    <li>
+        <div>
+            <img src="www.weislank.com/static/index/zm001/images/side04.png" alt="">
+            <p>微信扫一扫</p>
+        </div>
+        <div>
+            <img src="" alt="微信">
+        </div>
+    </li>
+
+</div> -->
+
+<script src="www.weislank.com/static/index/zm001/js/jquery.min.js"></script>
+<script src="www.weislank.com/static/index/zm001/js/jquery.form.js"></script>
+<script src="www.weislank.com/static/index/zm001/js/layer/layer.js"></script>
+<script src="www.weislank.com/static/index/zm001/js/index.js?v=1.5.2"></script>
+<script src="www.weislank.com/static/index/zm001/js/common.js"></script>
+<script src="www.weislank.com/static/index/zm001/js/swiper7/swiper-bundle.min.js"></script>
+<script src="www.weislank.com/static/index/zm001/js/count.js"></script>
+<script src="www.weislank.com/static/index/zm001/js/wow.min.js"></script>
+<script>
+
+    $(function () {
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 50,
+            mobile: true,
+            live: true
+        });
+
+        wow.init();
+
+        $('.back_to_top').click(function () {
+            $('html,body').animate({
+                'scrollTop': '0px'
+            }, 800);
+        })
+        $('.fix_box').hover(function () {
+            $(this).css({ 'right': "0px" })
+            $(".fix_box li div p").fadeIn()
+        }, function () {
+            $(this).css({ 'right': "-140px" })
+            $(".fix_box li div p").fadeOut()
+        })
+
+        $('.webmap').click(function () {
+            layer.open({
+                type: 2,
+                title: '网站地图',
+                shade: 0.3,
+                shadeClose: true,
+                maxmin: false,
+                scrollbar: false,
+                area: ['550px', '440px'],
+                content: ["/index/index/sitemap.html"]
+            });
+        });
+        // 分页
+        $('.page-btn').click(function () {
+            var lastPage = Number('');
+            var page = $('.page-inner input[name=page]').val();
+            if (page > lastPage) {
+                layer.msg('不能超过最大分页数');
+                return false;
+            } else {
+                var href = $(this).attr('data-href');
+                $(this).attr('href', href + page);
+            }
+
+        });
+    })
+
+</script>
+
+
+<script src="www.weislank.com/static/index/zm001/js/jquery.form.js"></script>
+<script>
+    var hock = true;
+    $('.submit').click(function () {
+        if (!hock) return;
+        var _form = $('#formData').serializeArray();
+        var f = {};
+        var _place = {};
+        $.each(_form, function (i, field) {
+            f[field.name] = field.value;
+            _place[field.name] = $('*[name=' + field.name + ']').attr('placeholder');
+        });
+        if (f.name == '' || f.name == _place.name) {
+            layer.msg('请输入您的姓名');
+            $('*[name=name]').focus();
+        } else if (f.tel == '' || f.tel == _place.mobile) {
+            layer.msg('请输入您的电话');
+            $('*[name=tel]').focus();
+        } else if (/^([0-9]{3,4}-)?[0-9]{7,8}$/.test(f.tel) == false && /^[1][0-9]{10}$/.test(f.tel) == false) {
+            layer.msg('请输入正确的电话号码,区号与电话号之间用 - 连接');
+            $('*[name=tel]').focus();
+        // } else if (f.address == '' || f.address == _place.address) {
+        //     layer.msg('请输入你的地址');
+        //     $('*[name=address]').focus();
+        // } else if (f.email == '' || f.email == _place.email) {
+        //     layer.msg('请输入你的邮箱');
+        //     $('*[name=email]').focus();
+        // } else if (/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(f.email) == false) {
+        //     layer.msg('请输入正确的的邮箱');
+        //     $('*[name=email]').focus();
+        } else if (f.content == '' || f.content == _place.content) {
+            layer.msg('请输入留言内容');
+            $('*[name=content]').focus();
+        } else if (f.captcha == '' || f.captcha == _place.captcha) {
+            layer.msg('请输入验证码');
+            $('*[name=captcha]').focus();
+        } else {
+            hock = false;
+            var option = {
+                url: "/index/message/addmessage.html",
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    hock = true;
+                    if (data.code == 2012) {
+                        layer.msg('您的留言已提交！');
+                        $('#formData')[0].reset();  // 提交成功重置
+                        $('#verifyImg').click();
+                    } else if (data.code == 4013) {
+                        layer.msg(data.msg);
+                        $('#verifyImg').click();
+                    } else {
+                        layer.msg(data.msg);
+                    }
+                },
+                fail: function (res) {
+                    hock = true;
+                    layer.msg(res.msg);
+                }
+            };
+            $('#formData').ajaxSubmit(option);
+        }
+    });
+
+    /**
+     * 验证码刷新   
+     * @author wangyong
+    */
+    function refreshVerify(url) {
+        timestamp = new Date().getTime();
+        $('#verifyImg').attr('src', url + timestamp);
+    }
+</script>
+<!--[if lt IE 10]>
+    <script src="www.weislank.com/static/index/zm001/js/placeholder.js"></script>
+    <![endif]-->
+
+  <script>
+    $(function () {
+      function mouse(banner, swiper) {
+        let ban = banner + " .swiper-slide";
+        $(ban).mouseenter(function () {
+          swiper.autoplay.stop();
+        })
+        // 鼠标移出开始自动滚动
+        $(ban).mouseleave(function () {
+          swiper.autoplay.start();
+        })
+      }
+      var index1Swiper = new Swiper('#index1-swiper', {
+        speed: 1000,
+        slidesPerView: 4,
+        grid: {
+          fill: 'row',
+          rows: 2,
+        },
+        spaceBetween: 20,
+        // autoplay: {
+        //   delay: 5000,
+        //   stopOnLastSlide: false,
+        //   disableOnInteraction: true,
+        // },
+      })
+
+      var proType = $(".index4 ul li")
+      var index4Swiper = new Swiper('#index4-swiper', {
+        speed: 1000,
+        // 淡入
+        effect: 'fade',
+        autoplay: {
+          delay: 5000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true,
+        },
+        on: {
+          slideChange: function () {
+            proType.eq(this.activeIndex).addClass("active").siblings().removeClass("active")
+          },
+        }
+      });
+      proType.eq(index4Swiper.activeIndex).addClass("active")
+      proType.on('click',function () {
+        $(this).addClass("active").siblings().removeClass("active")
+        index4Swiper.slideTo($(this).index(), 1000)
+      });
+
+      mouse("#index1-swiper", index1Swiper);
+    })
+  </script>
+  <script>
+    $('.webmap').click(function () {
+      layer.open({
+        type: 2,
+        title: '网站地图',
+        shade: 0.3,
+        shadeClose: true,
+        maxmin: false,
+        scrollbar: false,
+        area: ['550px', '440px'],
+        content: ["/index/index/sitemap.html"]
+      });
+    });
+
+    $('.com-btn a').hover(function () {
+      $(this).addClass('active').siblings().removeClass('active');
+    });
+
+    /**
+   * 验证码刷新
+   * @author wangyong
+   */
+    function refreshVerify(url) {
+      timestamp = new Date().getTime();
+      $('#verifyImg').attr('src', url + timestamp);
+    }
+
+    // 提交留言
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+"D:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\NPCAP.dir/objects.a
+D:\MinGW_64\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin\ar.exe qc CMakeFiles\NPCAP.dir/objects.a @CMakeFiles\NPCAP.dir\objects1.rsp
+D:\MinGW_64\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\NPCAP.dir/objects.a -Wl,--no-whole-archive -o NPCAP.exe -Wl,--out-implib,libNPCAP.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\NPCAP.dir\linkLibs.rsp

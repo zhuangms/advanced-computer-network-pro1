@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1105</width>
+    <height>822</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BabySniffer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>苹方 中等</family>
+    </font>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,12">
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="font">
+       <font>
+        <family>苹方 中等</family>
+       </font>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,1,6,1">
+       <item>
+        <widget class="QComboBox" name="if_box">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>250</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>苹方 中等</family>
+          </font>
+         </property>
+         <property name="currentText">
+          <string>网卡</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>网卡</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="search_text">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>苹方 中等</family>
+          </font>
+         </property>
+         <property name="placeholderText">
+          <string>例：tcp.sport=1234; request in icmp.type; udp</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="search_button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>苹方 中等</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>搜索</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="font">
+       <font>
+        <family>苹方字体</family>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="opaqueResize">
+       <bool>true</bool>
+      </property>
+      <property name="handleWidth">
+       <number>15</number>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="table_wrapper" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>苹方 中等</family>
+        </font>
+       </property>
+       <layout class="QGridLayout" name="gridLayout" columnstretch="0">
+        <item row="0" column="0">
+         <widget class="QTableWidget" name="table">
+          <property name="font">
+           <font>
+            <family>苹方 中等</family>
+           </font>
+          </property>
+          <property name="midLineWidth">
+           <number>2</number>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <attribute name="horizontalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>100</number>
+          </attribute>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>50</number>
+          </attribute>
+          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>序号</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>时间</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>源</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>目的</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>协议</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>长度</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>信息</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_wrapper" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>2</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>苹方 中等</family>
+        </font>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tab">
+          <property name="font">
+           <font>
+            <family>苹方 中等</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTabWidget::pane
+
+{
+
+border-width: 0px;
+
+border-color:white;
+
+border-style:outset;
+
+border-radius: 3px;
+
+background-color: rgb(132, 171, 208);
+
+background: transparent;
+
+}​
+</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="elideMode">
+           <enum>Qt::ElideNone</enum>
+          </property>
+          <property name="documentMode">
+           <bool>false</bool>
+          </property>
+          <property name="tabsClosable">
+           <bool>false</bool>
+          </property>
+          <property name="movable">
+           <bool>false</bool>
+          </property>
+          <property name="tabBarAutoHide">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="detail">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <attribute name="title">
+            <string>详细信息</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QTreeWidget" name="detail_tree">
+              <property name="autoExpandDelay">
+               <number>-1</number>
+              </property>
+              <attribute name="headerDefaultSectionSize">
+               <number>200</number>
+              </attribute>
+              <attribute name="headerMinimumSectionSize">
+               <number>200</number>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>字段</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>值</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="hex_info">
+           <attribute name="title">
+            <string>HEX</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QTextBrowser" name="hex_text">
+              <property name="font">
+               <font>
+                <family>苹方 中等</family>
+               </font>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'苹方 中等'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="reassemble_tab">
+           <property name="font">
+            <font>
+             <family>苹方 中等</family>
+            </font>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="accessibleName">
+            <string>重组</string>
+           </property>
+           <attribute name="title">
+            <string>重组</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QTableWidget" name="reassemble_table">
+              <property name="font">
+               <font>
+                <family>苹方 中等</family>
+               </font>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>序号</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>苹方 中等</family>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>源</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>苹方 中等</family>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>目的</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>苹方 中等</family>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>协议</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>苹方 中等</family>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>长度</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>苹方 中等</family>
+                </font>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>信息</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>苹方 中等</family>
+                </font>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="filter">
+           <attribute name="title">
+            <string>过滤器</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,0,0,0,0">
+                <property name="topMargin">
+                 <number>40</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>20</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>30</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>50</number>
+                </property>
+                <item row="0" column="2">
+                 <widget class="QLineEdit" name="filter_src"/>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLineEdit" name="filter_dst"/>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label">
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>源IP</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_2">
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>目的IP</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="2">
+                 <widget class="QLineEdit" name="filter_dport"/>
+                </item>
+                <item row="2" column="2">
+                 <widget class="QLineEdit" name="filter_sport"/>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_4">
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>目的端口</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_3">
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>源端口</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="label_5">
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>协议</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="2">
+                 <widget class="QLineEdit" name="filter_protocol"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <property name="leftMargin">
+                 <number>50</number>
+                </property>
+                <item>
+                 <widget class="QRadioButton" name="radio_and">
+                  <property name="text">
+                   <string>与连接</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="radio_or">
+                  <property name="text">
+                   <string>或连接</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1105</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 中等</family>
+    </font>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="font">
+     <font>
+      <family>苹方 中等</family>
+     </font>
+    </property>
+    <property name="title">
+     <string>文件(F)</string>
+    </property>
+    <addaction name="action_open_file"/>
+    <addaction name="action_save_as"/>
+    <addaction name="separator"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_C">
+    <property name="title">
+     <string>捕获(C)</string>
+    </property>
+    <addaction name="action_start"/>
+    <addaction name="action_stop"/>
+    <addaction name="action_restart"/>
+    <addaction name="action_clean_all"/>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>工具(T)</string>
+    </property>
+    <addaction name="action_filter"/>
+    <addaction name="action_show_details"/>
+    <addaction name="action_reassemble"/>
+    <addaction name="action_tcp_to_file"/>
+   </widget>
+   <widget class="QMenu" name="menu_H">
+    <property name="title">
+     <string>帮助(H)</string>
+    </property>
+    <addaction name="action_help_doc"/>
+    <addaction name="action_about_sniffer"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_C"/>
+   <addaction name="menu_T"/>
+   <addaction name="menu_H"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="font">
+    <font>
+     <family>苹方 中等</family>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_start"/>
+   <addaction name="action_stop"/>
+   <addaction name="action_restart"/>
+   <addaction name="action_clean_all"/>
+   <addaction name="action_open_file"/>
+   <addaction name="action_save_as"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="font">
+    <font>
+     <family>苹方 中等</family>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_show_details"/>
+   <addaction name="action_filter"/>
+   <addaction name="action_reassemble"/>
+   <addaction name="action_tcp_to_file"/>
+   <addaction name="action_exit"/>
+  </widget>
+  <action name="action_start">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>img/start.png</normaloff>img/start.png</iconset>
+   </property>
+   <property name="text">
+    <string>开始捕获</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="action_help_doc">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/help.png</normaloff>img/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>帮助文档</string>
+   </property>
+  </action>
+  <action name="action_about_sniffer">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/information.png</normaloff>img/information.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于sniffer</string>
+   </property>
+  </action>
+  <action name="action_stop">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/stop.png</normaloff>img/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>停止捕获</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="action_restart">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/reload.png</normaloff>img/reload.png</iconset>
+   </property>
+   <property name="text">
+    <string>重新开始</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="action_clean_all">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/clear.png</normaloff>img/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>清除全部</string>
+   </property>
+   <property name="toolTip">
+    <string>清除全部</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action_open_file">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/file.png</normaloff>img/file.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_save_as">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/save.png</normaloff>img/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>另存为</string>
+   </property>
+   <property name="toolTip">
+    <string>另存为...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_show_details">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/detail.png</normaloff>img/detail.png</iconset>
+   </property>
+   <property name="text">
+    <string>显示详情</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="action_filter">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/filter.png</normaloff>img/filter.png</iconset>
+   </property>
+   <property name="text">
+    <string>过滤器</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="action_reassemble">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/reassemble.png</normaloff>img/reassemble.png</iconset>
+   </property>
+   <property name="text">
+    <string>重组</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="action_tcp_to_file">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/tcpToFile.png</normaloff>img/tcpToFile.png</iconset>
+   </property>
+   <property name="text">
+    <string>文件重组</string>
+   </property>
+   <property name="toolTip">
+    <string>文件重组</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="icon">
+    <iconset>
+     <normaloff>img/exit.png</normaloff>img/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="priority">
+    <enum>QAction::NormalPriority</enum>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

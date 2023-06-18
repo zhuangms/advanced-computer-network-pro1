@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(NPCAP VERSION 0.1.0 LANGUAGES C CXX)
+
+include(CTest)
+include_directories(Include)
+include_directories(Lib/x64)
+link_directories(Lib/x64)
+enable_testing()
+add_executable(NPCAP main.cpp)
+
+target_link_libraries(NPCAP wpcap.lib Packet.lib)
+target_link_libraries(NPCAP ws2_32.lib)
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
